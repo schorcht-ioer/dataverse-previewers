@@ -11,6 +11,32 @@
     color: #56B7CB;
 }
 
+/* 
+custom table styling
+*/
+
+.preview table {
+  margin-bottom: 15px;
+}
+
+.preview td, .preview th {
+  border: 1px solid #ddd;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.preview th {
+  background-color: #ddd;
+  color: #333;
+}
+
+.preview tr:nth-child(even){background-color: #f2f2f2;}
+
+.preview tr:hover {background-color: #ddd;}
+
+
 /* Much of .preview-header styling is to replace bootstrap styling.
 This should allow previewers to not use bootstrap which could potentially interfere with the display of the contents.
 This has been done for the Rich Html Previewer, which also has the reverse issue 
