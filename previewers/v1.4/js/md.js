@@ -11,6 +11,7 @@ function writeContentAndData(data, fileUrl, file, title, authors) {
     addStandardPreviewHeader(file, title, authors);
     const converter = new showdown.Converter();
     converter.setOption('tables', true);
+    converter.setOption('literalMidWordUnderscores', true);
     const html = converter.makeHtml(data);
     $('.preview').append($("<div/>").html(html));
 }
