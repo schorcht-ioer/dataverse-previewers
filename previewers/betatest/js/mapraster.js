@@ -18,7 +18,8 @@ async function loadMetadata(metadataUrl) {
   const response = await fetch(metadataUrl);
 
   if (!response.ok) {
-    throw new Error(`HTTP Error: ${response.status}`);
+    show_error(`request on metadata failed`);
+    throw new Error(`HTTP Error: ${response.status}`);    
   }
 
   const metadata = await response.json();
@@ -38,7 +39,8 @@ async function registerEPSG(epsg) {
     );
 
     if (!response.ok) {
-        throw new Error("EPSG-Code not found");
+        show_error(`EPSG-Code ${epsg.toString()} not found`);
+        throw new Error("EPSG-Code not found");        
     }
 
     const def = (await response.text()).trim();
